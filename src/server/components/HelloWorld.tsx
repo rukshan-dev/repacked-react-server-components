@@ -1,24 +1,10 @@
-import { FC, useEffect, useState } from "react";
-import "./styles.css";
+import Header from "@root/client/components/Header/Header";
+import { FC } from "react";
 
-const LandingPage: FC = () => {
-  const [content, setContent] = useState({
-    h1: "",
-    h2: "",
-  });
-
-  useEffect(() => {
-    fetch("/hello")
-      .then((res) => res.json())
-      .then((res) => {
-        setContent(res);
-      });
-  }, []);
-
+const HelloWorld: FC = () => {
   return (
     <div className="container">
-      <h1>{content.h1}</h1>
-      <h2>{content.h2}</h2>
+      <Header />
       <p>
         Congratulations on setting up your app with{" "}
         <span className="brand">Repacked</span>! Here's what you can look
@@ -47,4 +33,4 @@ const LandingPage: FC = () => {
   );
 };
 
-export default LandingPage;
+export default HelloWorld;

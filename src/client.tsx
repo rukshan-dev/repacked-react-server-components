@@ -1,9 +1,9 @@
 import { StrictMode, FC } from "react";
 import * as ReactDOM from "react-dom/client";
-import LandingPage from "@root/components/LandingPage/LandingPage";
+import RenderServerComponent from "@root/client/rsc/RenderServerComponent";
 
 const App: FC = () => {
-  return <LandingPage />;
+  return <RenderServerComponent />;
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(

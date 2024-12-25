@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ES2020",
@@ -8,6 +9,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "checkJs": true
+    "checkJs": true,
+    "paths": {
+      "@root/*": ["src/*"]
+    }
   }
 }

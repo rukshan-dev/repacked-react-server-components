@@ -1,3 +1,4 @@
+const path = require("path");
 /**
  * @type {import('repacked').AppConfig}
  */
@@ -14,6 +15,10 @@ const config = {
     port: 3000,
   },
   webpack: (config) => {
+    //setting path alias
+    config.resolve.alias = {
+      "@root": path.resolve(__dirname, "src"),
+    };
     return config;
   },
   jest: (config) => {

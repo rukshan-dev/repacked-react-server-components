@@ -16,7 +16,7 @@ Ensure you have the following installed on your system:
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:rukshan-dev/repacked-sc.git
+   git clone git@github.com:rukshan-dev/repacked-react-server-components.git
    cd repacked-sc
    ```
 

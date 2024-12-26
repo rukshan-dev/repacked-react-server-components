@@ -1,10 +1,13 @@
-import Header from "@root/client/components/Header/Header";
 import { FC } from "react";
 
-const HelloWorld: FC = () => {
+const HelloWorld: FC = async () => {
+  const response = await fetch("http://localhost:3000/hello");
+  const content = await response.json();
+
   return (
     <div className="container">
-      <Header />
+      <h1>{content.h1}</h1>
+      <h2>{content.h2}</h2>
       <p>
         Congratulations on setting up your app with{" "}
         <span className="brand">Repacked</span>! Here's what you can look

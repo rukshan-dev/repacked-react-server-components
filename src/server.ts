@@ -1,6 +1,20 @@
-import { Express } from "express";
+import { Express, Request } from "express";
 import renderReactTree from "@root/server/renderReactTree";
 import HelloWorld from "@root/server/components/HelloWorld";
+import { FC } from "react";
+
+const serverComponents: Record<string, FC> = {
+  HelloWorld,
+};
+
+const getComponent = (req: Request): FC => {
+  try {
+    const component = JSON.parse(req.query.data as string).component as string;
+    return serverComponents[component] ?? (() => null);
+  } catch (e) {
+    return () => null;
+  }
+};
 
 const server = (app: Express) => {
   app.get("/hello", (req, res) => {
@@ -11,7 +25,8 @@ const server = (app: Express) => {
   });
 
   app.get("/rsc", (req, res) => {
-    renderReactTree(res, HelloWorld, __dirname);
+    const component = getComponent(req);
+    renderReactTree(res, component, __dirname);
   });
 };
 

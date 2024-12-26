@@ -17,7 +17,7 @@ Ensure you have the following installed on your system:
 
    ```bash
    git clone git@github.com:rukshan-dev/repacked-react-server-components.git
-   cd repacked-sc
+   cd repacked-react-server-components
    ```
 
 2. Install dependencies:
